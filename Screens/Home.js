@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Text, View, StyleSheet } from 'react-native'
 import { black } from 'ansi-colors';
 import { sanFranciscoWeights } from 'react-native-typography'
+import LinearGradient from 'react-native-linear-gradient';
 
 
 class Home extends Component {
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
     header: {
         fontSize: 48,
         // fontWeight: 'bold',
-        color: 'black',
+        // color: 'black',
         marginTop: '15%',
         paddingLeft: 10
     }

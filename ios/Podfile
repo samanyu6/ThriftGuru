@@ -30,6 +30,8 @@ target 'ThriftGuru' do
 
   pod 'RNTextGradientView', :path => '../node_modules/react-native-text-gradient'
 
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+
   target 'ThriftGuruTests' do
     inherit! :search_paths
     # Pods for testing
