@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 import Grid from 'react-native-grid-component';
 import { iOSColors, sanFranciscoWeights } from 'react-native-typography'
+import LinearGradient from 'react-native-linear-gradient';
 
 class Sector extends Component {
   _renderItem = (data, i) => (
-    <View style={[{ backgroundColor: data.color }, styles.item]} key={i} >
-      <Text style={[sanFranciscoWeights.heavy, styles.gridText]} key={i}>{data.text}</Text>
-    </View>
+    <TouchableOpacity style= {styles.item} onPress={()=> alert('pressed')}>
+      <LinearGradient colors={[data.color1, data.color2]} style={styles.item} key={i}>
+        <Text style={[sanFranciscoWeights.heavy, styles.gridText]} key={i}>{data.text}</Text>
+      </LinearGradient>
+    </TouchableOpacity>
   );
 
   _renderPlaceholder = i => <View style={styles.item} key={i} />;
@@ -22,7 +25,14 @@ class Sector extends Component {
           style={styles.list}
           renderItem={this._renderItem}
           renderPlaceholder={this._renderPlaceholder}
-          data={[{color: iOSColors.red , text: 'Shirts'},{color: iOSColors.orange , text: 'T-Shirts'} ,{color:iOSColors.green , text: 'Jackets'} ,{color:  iOSColors.yellow , text: 'Trousers'}, {color: iOSColors.blue , text: 'Shoes'},{color: iOSColors.purple , text: 'Jeans'} ,{color: iOSColors.tealBlue , text: 'Belts'}]}
+          data={[{ color1: iOSColors.red, color2: iOSColors.orange, text: 'Shirts' },
+            { color1: iOSColors.orange,color2: iOSColors.yellow, text: 'T-Shirts' },
+            { color1: iOSColors.green,color2: iOSColors.tealBlue,text: 'Jackets' }, 
+            { color1: iOSColors.blue, color2: iOSColors.tealBlue, text: 'Trousers' },
+            { color1: iOSColors.tealBlue, color2: iOSColors.purple, text: 'Shoes' },
+            { color1: iOSColors.yellow, color2: iOSColors.pink, text: 'Jeans' },
+            { color1: iOSColors.tealBlue, color2: iOSColors.green, text: 'Belts' }
+          ]}
           numColumns={2}
         />
       </View>
@@ -34,7 +44,7 @@ const styles = StyleSheet.create({
   item: {
     flex: 1,
     height: 160,
-    margin: 10,
+    margin: 5,
     flexDirection: 'column',
     borderRadius: 10,
     textAlign: 'center',
@@ -58,7 +68,7 @@ container:{
 gridText: {
   fontSize: 20,
   alignSelf: 'center'
-}
+},
 });
 
 export default Sector
