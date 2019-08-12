@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { Text, View, StyleSheet } from 'react-native'
 import { black } from 'ansi-colors';
 import { sanFranciscoWeights } from 'react-native-typography'
-import LinearGradient from 'react-native-linear-gradient';
-
 
 class Home extends Component {
   render() {
@@ -12,6 +10,7 @@ class Home extends Component {
             <Text style={[sanFranciscoWeights.heavy, styles.header]}>
                 ThriftGuru
             </Text>
+      
       </View>
     )
   }

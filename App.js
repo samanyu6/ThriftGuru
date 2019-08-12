@@ -25,7 +25,7 @@ const stackNav = createStackNavigator({
     screen: TabNav
   }
   }, {
-    initialRouteName: "Home",
+    initialRouteName: "Tab",
     headerMode: 'none',
     navigationOptions: {
       headerVisible: false,
